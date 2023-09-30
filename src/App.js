@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  createBrowserRouter as CBR,
+  createRoutesFromElements as CRFE,
+  Outlet,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import AppWrapper from "./component /AppWrapper";
+import SignUp from "./component /SignUp";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const router = CBR(
+    CRFE(
+      <Route path="/" element={<Root />}>
+        <Route path="/signup" element={<SignUp />} />
+      </Route>
+    )
   );
+  return <RouterProvider router={router} />;
 }
+
+const Root = () => {
+  return (
+    <AppWrapper>
+      <Outlet />
+    </AppWrapper>
+  );
+};
 
 export default App;
