@@ -3,10 +3,10 @@ import React from "react";
 const Logo = () => {
   return (
     <svg
-      height="200"
+      height="100"
       width="500"
       zoomAndPan="magnify"
-      viewBox="0 100 375 175"
+      viewBox="0 150 375 100"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
     >
